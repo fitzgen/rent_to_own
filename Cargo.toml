@@ -1,0 +1,14 @@
+[package]
+authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
+categories = ["rust-patterns", "memory-management"]
+description = "A wrapper type for optionally giving up ownership of the underlying value."
+documentation = "https://docs.rs/rent_to_own"
+keywords = ["take", "move", "cell", "rent", "borrow"]
+license = "Apache-2.0/MIT"
+name = "rent_to_own"
+readme = "./README.md"
+repository = "https://github.com/fitzgen/rent_to_own"
+version = "0.1.0"
+
+[badges.travis-ci]
+repository = "fitzgen/rent_to_own"
