@@ -104,8 +104,8 @@ parsing the configuration file and use a default configuration with the
 fn use_custom_configuration_or_default(resource: BigExpensiveResource) -> ConfiguredResource {
     // We pass the resource into `with` and it constructs the `RentToOwn`
     // wrapper around it and then gives the wrapper to the closure. Finally, it
-    // returns a pair of an `Option<BigExpensiveResource>` which is `Some` if
-    // the closure took ownership and `None` if it did not, and the closure's
+    // returns a pair of an `Option<BigExpensiveResource>` which is `None` if
+    // the closure took ownership and `Some` if it did not, and the closure's
     // return value.
     let (resource, result) = RentToOwn::with(resource, |resource| {
         configure(resource)
