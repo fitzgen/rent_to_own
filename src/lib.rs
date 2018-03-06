@@ -226,6 +226,11 @@ impl<'a, T> RentToOwn<'a, T> {
     /// 20 | }
     ///    | - mutable borrow ends here
     /// ```
+    ///
+    /// Importantly, if `'a` is not `'b` then one cannot coerse from
+    /// `&'a mut RentToOwn<'a, Thing>` to `&'b mut RentToOwn<'b, Thing>`
+    /// becuase [`&'a mut T` is invariant in `T`](https://doc.rust-lang.org/nomicon/subtyping.html).
+    ///
     pub fn take(&'a mut self) -> T {
         self.inner.take().unwrap()
     }
